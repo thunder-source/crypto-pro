@@ -1,4 +1,4 @@
-import { Button, color, HStack } from "@chakra-ui/react";
+import { Button, HStack } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
@@ -17,8 +17,7 @@ const Header = () => {
           onClick={() => {
             signOut(auth)
               .then(() => {
-                window.location.replace("/signin");
-                // navigate("/");
+                window.location.replace("/");
                 // Sign-out successful.
               })
               .catch((error) => {

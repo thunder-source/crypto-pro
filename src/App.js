@@ -1,10 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Coins from "./components/Coins";
@@ -14,14 +8,11 @@ import Footer from "./components/Footer";
 import SignIn from "./Authentication/SignIn";
 import SignUp from "./Authentication/SignUp";
 import { createContext, useEffect, useState } from "react";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
-
-// firebase.auth().currentUser
 
 export const MainContext = createContext();
 function App() {
-  // const navigate = useNavigate();
   const [user, setUser] = useState();
   const [mainData, setMainData] = useState({});
   useEffect(() => {
@@ -35,9 +26,6 @@ function App() {
     });
   }, [user]);
 
-  // alpha code //
-
-  // const { pathname } = useLocation();
   return (
     <MainContext.Provider value={[mainData, setMainData]}>
       <Router>
@@ -72,6 +60,5 @@ function App() {
     </MainContext.Provider>
   );
 }
-// {location !== "/signin" && location !== "/signup" && <Footer />}
 
 export default App;
