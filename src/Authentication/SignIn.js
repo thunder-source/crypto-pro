@@ -27,7 +27,7 @@ export default function SignIn() {
     signInWithPopup(auth, googleProvider)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/home");
+        navigate("/");
         toast.success(user, {
           position: "top-right",
           autoClose: 5000,
@@ -58,7 +58,7 @@ export default function SignIn() {
     signInWithPopup(auth, githubProvider)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/home");
+        navigate("/");
         toast.success(user, {
           position: "top-right",
           autoClose: 5000,
@@ -132,7 +132,7 @@ export default function SignIn() {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/home");
+          navigate("/");
           e.target.disabled = false;
           toast.update(toastId.current, {
             render: "Successfully Logged in",

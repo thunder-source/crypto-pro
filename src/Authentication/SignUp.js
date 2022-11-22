@@ -29,7 +29,7 @@ export default function SignUp() {
     signInWithPopup(auth, googleProvider)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/home");
+        navigate("/");
         toast.success(user, {
           position: "top-right",
           autoClose: 5000,
@@ -60,7 +60,7 @@ export default function SignUp() {
     signInWithPopup(auth, githubProvider)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/home");
+        navigate("/");
         toast.success(user, {
           position: "top-right",
           autoClose: 5000,
@@ -149,8 +149,8 @@ export default function SignUp() {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-          navigate("/home");
+          // const user = userCredential.user;
+          // navigate("/");
           e.target.disabled = false;
           toast.update(toastId.current, {
             render: "Account Successfully Created",

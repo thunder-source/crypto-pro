@@ -19,12 +19,12 @@ function App() {
     onAuthStateChanged(auth, (user) => {
       if (user !== null) {
         setUser(user);
-        console.log("User Logged In ");
+        // console.log("User Logged In ");
       } else {
-        console.log("No user found");
+        // console.log("No user found");
       }
     });
-  }, [user]);
+  }, []);
 
   return (
     <MainContext.Provider value={[mainData, setMainData]}>
@@ -42,7 +42,7 @@ function App() {
             <>
               <Header />
               <Routes>
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/coins" element={<Coins />} />
                 <Route path="/exchanges" element={<Exchanges />} />
                 <Route path="/coin/:id" element={<CoinDetails />} />
